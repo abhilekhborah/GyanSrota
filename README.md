@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### Access answers to all queries related to academics, handbooks, facilities and other aspects of Manipal University Jaipur
+### Access answers to all queries related to academics, handbooks, facilities and other aspects of Manipal University Jaipur! 🌻
 
 ## Getting Started
 
