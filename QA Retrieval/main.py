@@ -34,13 +34,8 @@ from langchain.memory import ConversationBufferWindowMemory
 from langchain_community.embeddings import VoyageEmbeddings
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 
-# model_name = "BAAI/bge-small-en"
-# model_kwargs = {"device": "cpu"}
-# encode_kwargs = {"normalize_embeddings": True}
-# hf = HuggingFaceBgeEmbeddings(
-#     model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-# )
-VOYAGE_API_KEY = "pa-w7K9ZQvLC457PjtVXrkBFrGB-EOIayojaKjVYNDkcJg"
+
+VOYAGE_API_KEY = os.environ["VOYAGE_API_KEY"]
 embed = VoyageEmbeddings(voyage_api_key=VOYAGE_API_KEY, model="voyage-2")
 load_dotenv()
 google_api_key = os.getenv("GOOGLE_API_KEY")
@@ -61,10 +56,10 @@ pdf = get_corpus("/Users/deltae/Gyan Srota/Gyan-Srota-backend/Documents")
 chunks_faiss = get_corpus_chunks(pdf)
 
 
-embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="AIzaSyD39hGzPDJSPWgYXZiUqVFFYSX0Ork9Z_s")
+embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 vector_db_faiss = FAISS.from_documents(chunks_faiss, embedding=embed)
 
-model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3, google_api_key="AIzaSyD39hGzPDJSPWgYXZiUqVFFYSX0Ork9Z_s")
+model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
 faiss_retriever = vector_db_faiss.as_retriever()
 
 retriever_multi_query = MultiQueryRetriever.from_llm(
