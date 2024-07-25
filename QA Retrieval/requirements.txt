@@ -1,0 +1,16 @@
+langchain
+google-generativeai
+langchain_google_genai
+langchain_community
+faiss-cpu
+langchain-core
+python-dotenv
+pypdf
+rank-bm25
+fastapi
+uvicorn
+sse_starlette
+langserve
+flask
+requests
+sentence-transformers
