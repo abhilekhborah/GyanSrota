@@ -33,3 +33,5 @@ Routes for the project will be
 ```
 
 ## Demo Prompts
+![Gyan Srota](https://github.com/user-attachments/assets/6fc338fe-b768-4020-bc71-0b55a340f19b)
+
